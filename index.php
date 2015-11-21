@@ -35,8 +35,9 @@
         <div class="col-md-12 rezultatiHeader">
           <header class="prikazRezultata">
             <div class="col-md-4 prikazTim">
-              <img src="slike/group-users.png">
+              <img src="slike/group-users.png" alt="Icon">
               <p class="timJedan">Team 1</p>
+              
               <p class="lead rezultatJedan">3</p>
             </div>
             <div class="col-md-4 prikazVrijeme">
@@ -45,7 +46,7 @@
             </div>
             <div class="col-md-4 prikazTim">
               <p class="text-right lead rezultatDva">4</p>
-              <img src="slike/group-users.png" class="ikonaTima">
+              <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
             </div>
           </header>
