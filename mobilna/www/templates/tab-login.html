@@ -1,0 +1,44 @@
+<ion-view> 
+<ion-nav-title>Login</ion-nav-title>
+  <ion-content  class="padding">
+  
+<div class="list">
+
+<form>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Username</span>
+    <input type="text" placeholder="Username">
+  </label>
+
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Password</span>
+    <input type="password" placeholder="Password">
+  </label>
+
+  <div class="row">
+    <div class="col" style="text-align:center;">
+    <button class="button button-dark button-block icon ion-ios-unlocked-outline" type="submit" >
+    Login
+   </button>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<div class="card zuta" ng-show="alert">
+<div class="col">
+<p class="alert">Incorrect username or password!</p> 
+</div>
+</div>
+
+<div class="card crvena" ng-show="upozorenje">
+<div class="col">
+<p class="alert">Please try again!</p>
+</div>
+</div>
+
+
+
+</ion-content>
+</ion-view>
