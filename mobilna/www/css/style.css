@@ -3,6 +3,17 @@
 	border-style: none;
 }
 
+.pozadina li{
+	color: silver;
+	font-family: "Segoe UI" sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.naslov{
+	font-weight: normal !important;
+}
+
 .tim{
 	height: 100px !important;
 }
@@ -13,6 +24,66 @@
 	margin-top: 20% !important;
 }
 
-.igrac{
-	display:inline;
+.igraci{
+	text-align: center;
+}
+
+.zuta{
+border-color: #faebcc !important;
+background-color: #fcf8e3 !important;
+color: #8a6d3b !important;
+border-radius: 10px;
+height: 50px;
+width: 100%;
+text-align: center;
+padding: 10px;
+}
+
+.crvena{
+border-color: #ebccd1;
+background-color: #f2dede;
+color: #a94442;
+border-radius: 10px;
+height: 50px;
+width: 100%;
+text-align: center;
+padding: 10px;
+}
+
+.pozadina{
+	background-color: #212121 !important;
+	border-color: #444444 !important;
+}
+
+.pozadina_1{
+	background-color: #444444 !important;
+}
+
+.button-energized{
+background-color: #212121  !important; 
+border-color: #212121  !important;
+border-radius: 0%;
+}
+
+.slova[placeholder]{
+color:white !important;
+}
+
+.checkbox input:before, .checkbox-icon:before {
+background-color: silver !important;
+border-color: silver !important; 
+	}
+
+
+.tabs-background-dark .tabs, .tabs-background-dark > .tabs {
+border-color: #444444 !important;
+}
+
+.crna{
+	background-color: #212121;
+	border-color: #212121;
+}
+
+.check{
+	margin-left: 25%;
 }
