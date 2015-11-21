@@ -1,4 +1,73 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
 #mapa{
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100vh;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.mapa {
+	padding: 0;
+	margin-top: -99px;
+}
+
+.prikazRezultata {
+	color: #FFFF00;
+}
+
+.rezultatiHeader {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	background-color: rgba(33,33,33,.8);
+	height: 98px;
+}
+
+.prikazTim {
+	padding-top: 40px;
+}
+
+.rezultatJedan {
+	margin-left: 400px;
+	margin-top: -65px;
+	font-size: 60px;
+}
+
+.prikazVrijeme {
+	padding-top: 10px;
+}
+
+.vrijeme {
+	font-size: 60px;
+	margin-top: -20px;
+	color: #fff;
+}
+
+.rezultatDva {
+	margin-right: 400px;
+	margin-bottom: -55px;
+	margin-top: -30px;
+	font-size: 60px;
+}
+
+.timJedan {
+	margin-left: 40px;
+	margin-top: -22px;
+}
+
+.timDva {
+	width: 20%;
+	margin-left: 390px;
+	margin-top: -20px;
+}
+
+.ikonaTima {
+	margin-left: 400px;
 }

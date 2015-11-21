@@ -10,13 +10,16 @@
     <meta name="author" content="Infinite Loop">
     <link rel="icon" href="../../favicon.ico">
 
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
     <title><?php echo $title; ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/navbar-fixed-top.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -27,37 +30,30 @@
   </head>
 
   <body>
-
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-3">
-          <h2>Team 1</h2>
-          <div class="row">
-            <div class="col-md-12">
-              <img src="http://placehold.it/20x20" alt="Avatar" class="img-circle">
-              <img src="http://placehold.it/20x20" alt="Avatar" class="img-circle">
+        <div class="col-md-12 rezultatiHeader">
+          <header class="prikazRezultata">
+            <div class="col-md-4 prikazTim">
+              <img src="slike/group-users.png">
+              <p class="timJedan">Team 1</p>
+              <p class="lead rezultatJedan">3</p>
             </div>
-          </div>
+            <div class="col-md-4 prikazVrijeme">
+              <p class="text-center">Round 2</p>
+              <p class="text-center vrijeme">04:36</p>
+            </div>
+            <div class="col-md-4 prikazTim">
+              <p class="text-right lead rezultatDva">4</p>
+              <img src="slike/group-users.png" class="ikonaTima">
+              <p class="text-right timDva">Team 2</p>
+            </div>
+          </header>
         </div>
-        <div class="col-md-6">
-          <div class="row">
-            <div class="col-md-12">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6">
+      </div>
+      <div class="row">
+        <div class="col-md-12 mapa">
           <div id="mapa"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <h2>Team 2</h2>
-          <div class="row">
-            <div class="col-md-12">
-              <img src="http://placehold.it/20x20" alt="Avatar" class="img-circle">
-              <img src="http://placehold.it/20x20" alt="Avatar" class="img-circle">
-            </div>
-          </div>
         </div>
       </div>
     </div> 
@@ -65,15 +61,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('mapa'), {
-    center: {lat: -34.397, lng: 150.644},
-    zoom: 8
-  });
-}
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('mapa'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
 
-window.onload = initMap();
+      window.onload = initMap();
 
 
     </script>
