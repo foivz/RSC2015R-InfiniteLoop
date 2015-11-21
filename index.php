@@ -1,4 +1,6 @@
-<?php include "konfiguracija.php"; ?>
+<?php include "konfiguracija.php"; 
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,10 +11,6 @@
     <meta name="description" content="">
     <meta name="author" content="Infinite Loop">
     <link rel="icon" href="../../favicon.ico">
-
-    <!-- Font -->
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
 
     <title><?php echo $title; ?></title>
 
@@ -30,6 +28,7 @@
   </head>
 
   <body>
+
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 rezultatiHeader">
@@ -39,8 +38,8 @@
               <p class="timJedan">Team 1</p>
               
               <p class="lead rezultatJedan">3</p>
-            </div>
-            <div class="col-md-4 prikazVrijeme">
+              </div>
+              <div class="col-md-4 prikazVrijeme">
               <p class="text-center">Round 2</p>
               <p class="text-center vrijeme">04:36</p>
             </div>
@@ -48,7 +47,7 @@
               <p class="text-right lead rezultatDva">4</p>
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
-            </div>
+          </div>
           </header>
         </div>
       </div>
@@ -57,21 +56,127 @@
           <div id="mapa"></div>
         </div>
       </div>
+    </div>
     </div> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('mapa'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
+     $(document).ready(function() {
+      kreirajMapu();
+
+    });
+
+function kreirajMapu() {
+
+    var latlng = new google.maps.LatLng(46.305746, 16.336607);
+    var myOptions = {
+        zoom: 16,
+        center: latlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
+    //var image = 'i/hotel-map-pin.png';
+
+
+    $.ajax({
+        type: "GET",
+        url: "geolokacijaPrepreka.php",
+        success: function(koordinate){
+          podatci=$.parseJSON(koordinate);
+    for (var i = 0; i < podatci.length; i++) {
+      if (podatci[i].naziv == "Zastavica 1") {
+        var markeri = new google.maps.Marker({
+            position: new google.maps.LatLng(podatci[i].lang, podatci[i].lat),
+            map: map,
+            title: podatci[i].naziv,
+          //  icon: image,
+            zIndex: 1,
+            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
         });
       }
+      else if (podatci[i].naziv == "Zastavica 2") {
+        var markeri = new google.maps.Marker({
+            position: new google.maps.LatLng(podatci[i].lang, podatci[i].lat),
+            map: map,
+            title: podatci[i].naziv,
+          //  icon: image,
+            zIndex: 1,
+            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+        });
+      }
+      else if (podatci[i].naziv == "Motel") {
+        var markeri = new google.maps.Marker({
+            position: new google.maps.LatLng(podatci[i].lang, podatci[i].lat),
+            map: map,
+            title: podatci[i].naziv,
+          //  icon: image,
+            zIndex: 1,
+            icon: "http://findicons.com/files/icons/951/google_maps/32/hotel1star.png"
+        });
+      }
+    }
+  }
+      });
+    getLocation(map);
 
-      window.onload = initMap();
+    
+}
 
+function getLocation(map) {
+      $.ajax({
+        type: "GET",
+        url: "geolokacijaKorisnika.php",
+        success: function(koordinate){
+        var markeri = [];
+          podatci=$.parseJSON(koordinate);
+    for (var i = 0; i < podatci.length; i++) {
+      if (podatci[i].naziv == "Tim 1") {
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(podatci[i].lang, podatci[i].lat),
+            map: map,
+            title: podatci[i].naziv + " - " +podatci[i].ime,
+          //  icon: image,
+            zIndex: 1,
+            id: podatci[i].sifra,
+            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            draggable: true
+        });
+        markeri.push(marker);
+      }
+     if (podatci[i].naziv == "Tim 2") {
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(podatci[i].lang, podatci[i].lat),
+            map: map,
+            title: podatci[i].naziv + " - " +podatci[i].ime,
+          //  icon: image,
+            zIndex: 1,
+            id: podatci[i].sifra,
+            icon: "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+        });
+        markeri.push(marker);
+      }
+    }
+ 
+    interval(map, markeri);
+    }
+      });
+    }
+    function interval (map, markeri) {
+    var interval = setInterval(function(){
+      for (var i = 0; i < markeri.length; i++ ) {
+      markeri[i].setMap(null);
+      }
+    markeri.length = 0;
+      clear();
+      getLocation(map);
+      }, 5000);
+    function clear () {
+      clearInterval(interval);
+    }
+    }
 
     </script>
   </body>
