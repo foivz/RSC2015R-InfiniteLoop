@@ -3,3 +3,16 @@
 	border-style: none;
 }
 
+.tim{
+	height: 100px !important;
+}
+
+.over{
+	height: 150px !important;
+	border-radius: 50px !important;
+	margin-top: 20% !important;
+}
+
+.igrac{
+	display:inline;
+}
