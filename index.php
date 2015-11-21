@@ -46,7 +46,7 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              <canvas id="mapa"></canvas>
+          <div id="mapa"></div>
             </div>
           </div>
         </div>
@@ -65,36 +65,15 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
-      function initialize() {
-    var latlng = new google.maps.LatLng(52.474, -1.868);
-
-    var myOptions = {
-        zoom: 11,
-        center: latlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-
-    var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
-    var image = 'i/hotel-map-pin.png';
-
-    var hotels = [
-        ['ibis Birmingham Airport', 52.452656, -1.730548, 4],
-        ['ETAP Birmingham Airport', 52.452527, -1.731644, 3],
-        ['ibis Birmingham City Centre', 52.475162, -1.897208, 2]
-        ];
-
-    for (var i = 0; i < hotels.length; i++) {
-        var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(hotels[i][1], hotels[i][2]),
-            map: map,
-          //  icon: image,
-            title: hotels[i][0],
-            zIndex: hotels[i][3]
-        });
-    }
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('mapa'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
 }
 
-window.onload = initialize;
+window.onload = initMap();
 
 
     </script>
