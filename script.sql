@@ -20,15 +20,15 @@ drop table if exists game;
 create table game (
 sifra int not null primary key auto_increment,
 broj int,
-mec int
+mec int,
+pocetak datetime,
+kraj datetime
 )engine=innodb;
 
 drop table if exists mec;
 create table mec (
 sifra int not null primary key auto_increment,
-aktivan boolean,
-pocetak datetime,
-kraj datetime
+aktivan boolean
 )engine=innodb;
 
 drop table if exists timovi;
@@ -76,14 +76,32 @@ alter table timKorisnik add foreign key (tim) references timovi(sifra);
 alter table timKorisnik add foreign key (korisnik) references korisnik(sifra);
 alter table korisnik add foreign key (status) references status(sifra);
 
+<<<<<<< HEAD
 insert into mec (aktivan, pocetak, kraj) values (1, "2015-11-21 17:00:00", "2015-11-21 21:00:00");
 insert into game (broj, mec) values (1, 1);
 insert into game (broj, mec) values (2, 1);
 insert into game (broj, mec) values (3, 1);
 insert into gameTimKorisnik (timKorisnik, lang, lat, score, mrtav, game) values (1, "46.305746", "16.336607", 30, 0, 1);
+=======
+insert into mec (aktivan) values (1);
+insert into game (broj, mec, pocetak, kraj) values (1, 1, "2015-11-22 00:00:00", "2015-11-22 00:30:00");
+insert into game (broj, mec, pocetak, kraj) values (2, 1, "2015-11-22 00:30:00", "2015-11-22 01:00:00");
+insert into game (broj, mec, pocetak, kraj) values (3, 1, "2015-11-22 01:00:00", "2015-11-22 01:30:00");
+>>>>>>> origin/master
 insert into timovi (naziv) values ("Tim 1");
 insert into timovi (naziv) values ("Tim 2");
 insert into status (naziv) values ("Sudac");
 insert into status (naziv) values ("Igrač");
 insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Antun", "Matanović", "slike/....", 2, "antun", md5("123"));
 insert into timKorisnik (tim, korisnik) values (1, 1);
+<<<<<<< HEAD
+=======
+insert into timKorisnik (tim, korisnik) values (1, 2);
+insert into timKorisnik (tim, korisnik) values (2, 3);
+insert into gameTimKorisnik (timKorisnik, lat, lang, score, mrtav, game) values (1, "16.336607", "46.305746", 2, 0, 1);
+insert into gameTimKorisnik (timKorisnik, lat, lang, score, mrtav, game) values (2, "16.336700", "46.305999", 0, 0, 1);
+insert into gameTimKorisnik (timKorisnik, lat, lang, score, mrtav, game) values (3, "16.337900", "46.306000", 0, 0, 1);
+insert into prepreke (naziv, lat, lang) values ("Zastavica 1", "16.338000", "46.307000");
+insert into prepreke (naziv, lat, lang) values ("Zastavica 2", "16.335000", "46.305000");
+insert into prepreke (naziv, lat, lang) values ("Motel", "16.337500", "46.307000");
+>>>>>>> origin/master
