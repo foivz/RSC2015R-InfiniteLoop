@@ -28,7 +28,6 @@ session_start();
   </head>
 
   <body>
-
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 rezultatiHeader">
@@ -57,8 +56,8 @@ session_start();
                 </ul>
               </a>
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
-              </div>
-              <div class="col-md-4 col-sm-4 col-xs-4 prikazVrijeme">
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 prikazVrijeme">
               <p class="text-center" id="runda"></p>
               <p class="text-center vrijeme" id="vrijeme"></p>
             </div>
@@ -86,7 +85,7 @@ session_start();
                 <?php endforeach; ?>
                 </ul>
               </a>
-          </div>
+            </div>
           </header>
         </div>
       </div>
