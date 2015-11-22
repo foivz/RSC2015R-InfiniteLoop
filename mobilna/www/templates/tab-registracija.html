@@ -8,22 +8,22 @@
 
   <label class="item item-input pozadina">
     <span class="input-label"></span>
-    <input type="text" class="slova" placeholder="Firstname">
+    <input type="text" class="slova" placeholder="Firstname" ng-model="registracija.ime">
   </label>
 
   <label class="item item-input pozadina">
     <span class="input-label"></span>
-    <input type="text" class="slova" placeholder="Lastname">
+    <input type="text" class="slova" placeholder="Lastname" ng-model="registracija.prezime">
   </label>
 
   <label class="item item-input pozadina">
     <span class="input-label"></span>
-    <input type="text" class="slova" placeholder="Username">
+    <input type="text" class="slova" placeholder="Username" ng-model="registracija.username">
   </label>
 
   <label class="item item-input pozadina">
     <span class="input-label"></span>
-    <input type="password" class="slova" placeholder="Password">
+    <input type="password" class="slova" placeholder="Password" ng-model="registracija.password">
   </label>
 
 <label class="item pozadina" style="text-align:center;">
@@ -31,14 +31,14 @@
 
   <li class="item item-checkbox pozadina">
      <label class="checkbox">
-       <input type="checkbox" name="status" value="Judge">
+       <input type="checkbox" name="status" value="1" ng-model="registracija.sudac">
      </label>
   Judge 
   </li>
 
    <li class="item item-checkbox  pozadina">
      <label class="checkbox">
-       <input type="checkbox" name="status" value="Player">
+       <input type="checkbox" name="status" value="1" ng-model="registracija.igrac">
      </label>
      Player
   </li>
@@ -54,7 +54,7 @@
 
   <div class="row">
     <div class="col" style="text-align:center;">
-    <button class="button button-energized button-block" type="submit" >
+    <button class="button button-assertive button-block" type="submit" ng-click="registriraj()">
     Register
    </button>
     </div>

@@ -4,7 +4,7 @@
   
   <div class="row">
     <div class="col" style="text-align:center;">
-    <button class="button button-dark button-block icon ion-ios-people tim" type="submit" >
+    <button class="button button-dark button-block icon ion-ios-people tim" type="submit" ng-click="getKorisnici()">
     Team 1
     </button>
     </div>
@@ -15,19 +15,12 @@
 
 <ul class="list igraci">
  
-    <li class="item item-checkbox crna">
+    <li class="item item-checkbox crna" ng-repeat="item in korisnici">
      <label class="checkbox check">
        <input type="checkbox" name="igraci" value="igrac_1">
      </label>
-    Player 1
+   {{item.ime}} {{item.prezime}}
     </li>
-
-   <li class="item item-checkbox crna">
-     <label class="checkbox check">
-       <input type="checkbox" name="igraci" value="igrac_2">
-     </label>
-     Player 2
-  </li>
   
 </ul>
 
@@ -35,13 +28,32 @@
 
   <div class="row">
     <div class="col" style="text-align:center;">
-    <button class="button button-dark button-block icon ion-ios-people tim" type="submit" >
+    <button class="button button-dark button-block icon ion-ios-people tim" type="submit" ng-click="getKorisnik()">
     Team 2
     </button>
     </div>
   </div>
+  
+<ul class="list igraci">
+ 
+    <li class="item item-checkbox crna" ng-repeat="item in korisnici">
+     <label class="checkbox check">
+       <input type="checkbox" name="igraci" value="igrac_1">
+     </label>
+   {{item.ime}} {{item.prezime}}
+    </li>
+  
+</ul>
+
+<label class="item item-input pozadina border">
+    <span class="input-label"></span>
+    <input type="text" class="slova" placeholder="Number of round" ng-model="registracija.round">
+</label>
 
 
+<button class="button button-block button-energized">
+  Start game
+</button>
 
 
 </ion-content>

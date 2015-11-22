@@ -1,30 +1,26 @@
-<ion-tabs class="tabs-striped tabs-top tabs-background-dark tabs-color-light" ng-class="{'tabs-item-hide': hideTabs}">
+<ion-tabs class="tabs-striped tabs-top tabs-background-dark tabs-color-light">
 
-  <ion-tab title="Login" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login" hidden="true">
+  <ion-tab title="Login" icon-off="ion-log-in" icon-on="ion-log-in" href="#/tab/login" hidden="{{logiran}}">
     <ion-nav-view name="tab-login"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Registration" icon-off="ion-ios-paper" icon-on="ion-ios-paper" href="#/tab/registracija" hidden="true">
+  <ion-tab title="Registration" icon-off="ion-ios-paper" icon-on="ion-ios-paper" href="#/tab/registracija" hidden="{{logiran}}">
     <ion-nav-view name="tab-registracija"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Game" icon-off="ion-compose" icon-on="ion-compose" href="#/tab/igra">
+  <ion-tab title="Game" icon-off="ion-compose" icon-on="ion-compose" href="#/tab/igra" hidden="{{game}}">
     <ion-nav-view name="tab-igra" hidden="{{sudac}}"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Statistics" icon-off="ion-ios-pie" icon-on="ion-ios-pie" href="#/tab/statistika">
+  <ion-tab title="Statistics" icon-off="ion-ios-pie" icon-on="ion-ios-pie" href="#/tab/statistika" hidden="{{status}}">
     <ion-nav-view name="tab-statistika" hidden="{{igrac}}"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Map" icon-off="ion-ios-location" icon-on="ion-ios-location" href="#/tab/mapa">
+  <ion-tab title="Map" icon-off="ion-ios-location" icon-on="ion-ios-location" href="#/tab/mapa" hidden="{{sakrij}}">
     <ion-nav-view name="tab-mapa"></ion-nav-view>
   </ion-tab>
 
-  <ion-tab title="Messages" icon-off="ion-ios-chatboxes" icon-on="ion-ios-chatboxes" href="#/tab/poruke">
-    <ion-nav-view name="tab-poruke"></ion-nav-view>
-  </ion-tab>
-
-  <ion-tab title="Logout"  icon-off="ion-log-out" icon-on="ion-log-out">
+  <ion-tab title="Logout"  icon-off="ion-log-out" icon-on="ion-log-out" ng-click="odjava()" hidden="{{sakrij}}">
   </ion-tab>
 
 

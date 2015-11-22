@@ -5,8 +5,19 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ionic.service.core', 'ionic.service.push'])
+.config(['$ionicAppProvider', function($ionicAppProvider) {
+  // Identify app
+  $ionicAppProvider.identify({
+    // Your App ID
+    app_id: '9ee26f42',
+    // The public API key services will use for this app
+    api_key: '034d4447e156a5fc57b2174858b618d03f0704d70a53b4ae',
+    // Your GCM sender ID/project number (Uncomment if supporting Android)
+    gcm_id: '272779918008'
+  });
 
+}])
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,6 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       StatusBar.styleDefault();
     }
   });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -35,7 +47,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     .state('tab', {
     url: '/tab',
     abstract: true,
-    templateUrl: 'templates/tabs.html'
+    templateUrl: 'templates/tabs.html',
+    controller: 'LogoutCtrl'
   })
 
   // Each tab has its own nav history stack:
