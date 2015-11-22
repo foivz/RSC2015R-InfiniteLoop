@@ -201,7 +201,6 @@ function getLocation(map) {
 		$rootScope.igraci = data;
     for (var i = 0; i < $rootScope.igraci.length; i++) {
       if ($rootScope.igraci[i].naziv == "Tim 1") {
-
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng($rootScope.igraci[i].lang, $rootScope.igraci[i].lat),
             map: map,

@@ -67,7 +67,7 @@ border-radius: 0%;
 
 .slova[placeholder]{
 color:white !important;
-}
+padding-left: 10.5px !important;}
 
 .checkbox input:before, .checkbox-icon:before {
 background-color: silver !important;
@@ -95,4 +95,15 @@ border-color: #444444 !important;
 #mapa {
     width: 100%;
     height: 100%;
+}
+
+.my_team{
+border-color: #FFFF00;
+background-color: #FFFF00;
+color: black;
+border-radius: 10px;
+height: 100px;
+width: 100%;
+text-align: center;
+padding: 10px;
 }
