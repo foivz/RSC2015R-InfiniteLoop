@@ -1,5 +1,5 @@
 <?php
-$title = "Paintball app";
+$title = "Paintball Tracker";
 $server="localhost";
 $baza="paintball";
 $korisnik="root";

@@ -72,17 +72,17 @@ alter table timKorisnik add foreign key (korisnik) references korisnik(sifra);
 alter table korisnik add foreign key (status) references status(sifra);
 
 insert into mec (aktivan) values (1);
-insert into game (broj, mec, pocetak, kraj) values (1, 1, "2015-11-22 00:00:00", "2015-11-22 00:30:00");
-insert into game (broj, mec, pocetak, kraj) values (2, 1, "2015-11-22 00:30:00", "2015-11-22 01:00:00");
-insert into game (broj, mec, pocetak, kraj) values (3, 1, "2015-11-22 01:00:00", "2015-11-22 01:30:00");
+insert into game (broj, mec, pocetak, kraj) values (1, 1, "2015-11-22 00:30:00", "2015-11-23 23:00:00");
+insert into game (broj, mec, pocetak, kraj) values (2, 1, "2015-11-23 00:30:00", "2015-11-23 01:00:00");
+insert into game (broj, mec, pocetak, kraj) values (3, 1, "2015-11-24 01:00:00", "2015-11-24 01:30:00");
 insert into timovi (naziv) values ("Tim 1");
 insert into timovi (naziv) values ("Tim 2");
 insert into status (naziv) values ("Sudac");
 insert into status (naziv) values ("Igrač");
-insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Antun", "Matanović", "slike/....", 2, "antun", md5("123"));
-insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Tena", "Vilček", "slike/....", 2, "tena", md5("123"));
-insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Manuela", "Mikulecki", "slike/....", 2, "mani", md5("123"));
-insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Sudac", "Sudić", "slike/....", 1, "sudac", md5("123"));
+insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Antun", "Matanović", "slike/antun.jpg", 2, "antun", md5("123"));
+insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Tena", "Vilček", "slike/tena.jpg", 2, "tena", md5("123"));
+insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Manuela", "Mikulecki", "slike/mani.jpg", 2, "mani", md5("123"));
+insert into korisnik (ime, prezime, avatar, status, kor_ime, lozinka) values ("Sudac", "Sudić", "slike/drea.jpg", 1, "sudac", md5("123"));
 
 insert into timKorisnik (tim, korisnik) values (1, 1);
 insert into timKorisnik (tim, korisnik) values (1, 2);

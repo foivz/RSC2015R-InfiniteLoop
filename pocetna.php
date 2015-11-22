@@ -39,11 +39,21 @@ session_start();
               <a href="#team">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
+                  <?php   
+          $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=2");
+          $izraz->execute();
+          $korisnik=$izraz->fetchALL(PDO::FETCH_OBJ);
+          echo json_encode($korisnik);
+          foreach ($korisnik as $k):
+          if ($k->mrtav == 1): ?>
                   <li>
-                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
+                    <img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
                     <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
                   </li>
-                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
+          <?php endif; ?>
+
+                  <li><img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
+                <?php endforeach; ?>
                 </ul>
               </a>
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
@@ -59,11 +69,21 @@ session_start();
               <a href="#team" class="dropdownTeamList">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggleDva">
                 <ul class="listTeamDva" id="listTeamDva">
+                 <?php   
+          $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=2");
+          $izraz->execute();
+          $korisnik=$izraz->fetchALL(PDO::FETCH_OBJ);
+          echo json_encode($korisnik);
+          foreach ($korisnik as $k):
+          if ($k->mrtav == 1): ?>
                   <li>
-                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
+                    <img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
                     <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
                   </li>
-                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
+          <?php endif; ?>
+
+                  <li><img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
+                <?php endforeach; ?>
                 </ul>
               </a>
           </div>
@@ -81,15 +101,14 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
-    <script type="text/javascript">
       <script>
     $('#mojPrviModal').modal('hide');
 
     $('#autorizacijaModal').click(function () {
-        $('#amojPrviModal').modal('show');
+        $('#mojPrviModal').modal('show');
     });
     </script>
-    <script type="text/javascript">
+    <script>
     $('#listTeam').css('visibility', 'hidden');
 
     $('#triggerToggle').click(function() {
