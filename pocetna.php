@@ -117,6 +117,9 @@ session_start();
     $('#triggerToggleDva').click(function() {
       $('#listTeamDva').css('visibility', 'visible').toggle();
     })
+    $("#triggerToggle").click(function () {
+      $("#bodoviTim1").css("margin-top", "-230px").toggle();
+    })
     </script>
     <script>
      $(document).ready(function() {

@@ -38,7 +38,7 @@ body {
 
 .rezultatJedan {
 	margin-left: 380px;
-	margin-top: -200px;
+	margin-top: -237px;
 	font-size: 60px;
 }
 
@@ -63,6 +63,7 @@ body {
 	margin-left: 40px;
 	margin-top: -25px;
 	font-size: 20px;
+	width: 22%;
 }
 
 .timDva {
