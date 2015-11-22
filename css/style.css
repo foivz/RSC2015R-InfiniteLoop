@@ -135,3 +135,28 @@ body {
 	padding: 10px;
 	margin-right: -10px;
 }
+
+.indexBody {
+	background-color: black;
+}
+
+.indexPozadina {
+	background-color: #212121;
+	margin-top: 100px;
+}
+
+.logoPocetna {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.introIcon {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
