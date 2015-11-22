@@ -31,7 +31,7 @@ session_start();
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1 indexPozadina">
+        <div class="col-md-10 col-md-offset-1 col-sm-10 indexPozadina">
           <img src="slike/logo2.png" alt="Logo" class="logoPocetna">
           <a href="pocetna.php"><img src="slike/intro_icon.png" alt="Ulaz" class="introIcon"></a>
         </div>

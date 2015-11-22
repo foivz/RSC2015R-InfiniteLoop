@@ -31,14 +31,14 @@ session_start();
 
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-12 rezultatiHeader">
+        <div class="col-md-12 col-sm-12 col-xs-12 rezultatiHeader">
           <header class="prikazRezultata">
-            <div class="col-md-4 prikazTim">
+            <div class="col-md-4 col-sm-4 col-xs-4 prikazTim">
               <img src="slike/group-users.png" alt="Icon">
               <p class="timJedan">Team 1</p>
-              <a href="#team">
+              <a href="#team" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
-                <ul class="listTeam">
+                <ul class="listTeam" id="listTeam">
                   <li>
                     <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
                     <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
@@ -48,17 +48,17 @@ session_start();
               </a>
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
               </div>
-              <div class="col-md-4 prikazVrijeme">
+              <div class="col-md-4 col-sm-4 col-xs-4 prikazVrijeme">
               <p class="text-center" id="runda"></p>
               <p class="text-center vrijeme" id="vrijeme"></p>
             </div>
-            <div class="col-md-4 prikazTim">
+            <div class="col-md-4 col-sm-4 col-xs-4 prikazTim">
               <p class="text-right lead rezultatDva" id="bodoviTim2"></p>
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
               <a href="#team" class="dropdownTeamList">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
-                <ul class="listTeamDva">
+                <ul class="listTeamDva" id="listTeamDva">
                   <li>
                     <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
                     <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
@@ -71,7 +71,7 @@ session_start();
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12 mapa">
+        <div class="col-md-12 col-sm-12 col-xs-12 mapa">
           <div id="mapa"></div>
         </div>
       </div>
