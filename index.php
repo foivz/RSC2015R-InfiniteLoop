@@ -46,14 +46,15 @@ session_start();
                   <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle"></li>
                 </ul>
               </a>
-              <p class="lead rezultatJedan">3</p>
+              <p class="lead rezultatJedan">3</p>              
+              <p class="lead rezultatJedan" id="bodoviTim1"></p>
               </div>
               <div class="col-md-4 prikazVrijeme">
-              <p class="text-center">Round 2</p>
-              <p class="text-center vrijeme">04:36</p>
+              <p class="text-center" id="runda"></p>
+              <p class="text-center vrijeme" id="vrijeme"></p>
             </div>
             <div class="col-md-4 prikazTim">
-              <p class="text-right lead rezultatDva">4</p>
+              <p class="text-right lead rezultatDva" id="bodoviTim2"></p>
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
               <a href="#team" class="dropdownTeamList">
@@ -83,8 +84,74 @@ session_start();
     <script>
      $(document).ready(function() {
       kreirajMapu();
-
+      bodoviTim1();
+      bodoviTim2();
+      runda();
     });
+
+    function bodoviTim1 () {
+       $.ajax({
+        type: "GET",
+        url: "bodoviTim1.php",
+        success: function(bodovi){
+          podatci=$.parseJSON(bodovi);
+          $("#bodoviTim1").html(podatci.score);
+          intervalBodoviTim1();
+        }
+      });
+    }
+  function intervalBodoviTim1 () {
+    var interval = setInterval(function(){
+      clear();
+      bodoviTim1();
+      }, 2000);
+    function clear () {
+      clearInterval(interval);
+    }
+    }
+
+  function bodoviTim2 () {
+       $.ajax({
+        type: "GET",
+        url: "bodoviTim2.php",
+        success: function(bodovi){
+          podatci=$.parseJSON(bodovi);
+          $("#bodoviTim2").html(podatci.score);
+          intervalBodoviTim2();
+        }
+      });
+    }
+  function intervalBodoviTim2 () {
+    var interval = setInterval(function(){
+      clear();
+      bodoviTim2();
+      }, 2000);
+    function clear () {
+      clearInterval(interval);
+    }
+    }
+
+   function runda () {
+       $.ajax({
+        type: "GET",
+        url: "runda.php",
+        success: function(runda){
+          podatci=$.parseJSON(runda);
+          $("#runda").html("Runda " + podatci.broj);
+          $("#vrijeme").html(podatci.kraj);
+          rundaInterval();
+        }
+      });
+    }
+  function rundaInterval () {
+    var interval = setInterval(function(){
+      clear();
+      runda();
+      }, 1000);
+    function clear () {
+      clearInterval(interval);
+    }
+    }
 
 function kreirajMapu() {
 
@@ -191,7 +258,7 @@ function getLocation(map) {
     markeri.length = 0;
       clear();
       getLocation(map);
-      }, 5000);
+      }, 2000);
     function clear () {
       clearInterval(interval);
     }
