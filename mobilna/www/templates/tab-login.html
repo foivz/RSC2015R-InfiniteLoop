@@ -4,16 +4,16 @@
   
 <div class="list">
 
-<form>
+<form ng-submit="submit()">
 
   <label class="item item-input item-floating-label pozadina">
     <span class="input-label">Username</span>
-    <input type="text" class="slova" placeholder="Username">
+    <input type="text" class="slova" placeholder="Username" ng-model="loginData.kor_ime">
   </label>
 
   <label class="item item-input item-floating-label pozadina">
     <span class="input-label">Password</span>
-    <input type="password" class="slova" placeholder="Password">
+    <input type="password" class="slova" placeholder="Password" ng-model="loginData.lozinka">
   </label>
 
   <div class="row">
