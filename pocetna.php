@@ -39,20 +39,19 @@ session_start();
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
                   <?php   
-          $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=2");
+          $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=1");
           $izraz->execute();
           $korisnik=$izraz->fetchALL(PDO::FETCH_OBJ);
-          echo json_encode($korisnik);
-          foreach ($korisnik as $k):
-          if ($k->mrtav == 1): ?>
+          foreach ($korisnik as $k) {
+          if ($k->mrtav == 1) {?>
                   <li>
                     <img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
                     <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
                   </li>
-          <?php endif; ?>
+          <?php } else { ?>
 
                   <li><img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
-                <?php endforeach; ?>
+                <?php } } ?>
                 </ul>
               </a>
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
@@ -72,7 +71,6 @@ session_start();
           $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=2");
           $izraz->execute();
           $korisnik=$izraz->fetchALL(PDO::FETCH_OBJ);
-          echo json_encode($korisnik);
           foreach ($korisnik as $k):
           if ($k->mrtav == 1): ?>
                   <li>
