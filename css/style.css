@@ -75,3 +75,63 @@ body {
 .ikonaTima {
 	margin-left: 380px;
 }
+
+.dropdownTeam {
+	width: 37px;
+	height: 37px;
+	background-color: rgba(33,33,33,.8);
+	border-radius: 100%;
+	padding: 5px;
+	margin-left: 30px;
+	margin-top: 7px;
+}
+
+.listTeam {
+	list-style: none;
+	padding-left: 30px;
+	padding-top: 20px;
+	margin-right: 250px;
+	margin-left: -80px;
+	margin-top: -23px;
+	text-align: center;
+	width: 230px;
+	background-color: rgba(33,33,33,.8); 
+}
+
+.listTeam li {
+	padding: 10px;
+}
+
+.listImage {
+	z-index: 0;
+	margin: 0 0 0 25px !important;
+}
+
+.deathSmudge {
+	z-index: 1;
+	position: relative;
+	right: 25px;
+	top: 10px;
+}
+
+.dropdownTeamList {
+	margin-left: 380px;
+}
+
+.listTeamDva {
+	list-style: none;
+	padding-left: 0px;
+	padding-top: 20px;
+	margin-right: 250px;
+	margin-left: 323px;
+	margin-top: -22px;
+	text-align: center;
+	width: 200px;
+	background-color: rgba(33,33,33,.8); 
+	overflow: hidden;
+}
+
+.listTeamDva li {
+	padding: 10px;
+	margin-right: -10px;
+}

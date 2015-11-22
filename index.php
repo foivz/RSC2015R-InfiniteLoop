@@ -36,7 +36,16 @@ session_start();
             <div class="col-md-4 prikazTim">
               <img src="slike/group-users.png" alt="Icon">
               <p class="timJedan">Team 1</p>
-              
+              <a href="#team">
+                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
+                <ul class="listTeam">
+                  <li>
+                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage">
+                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge">
+                  </li>
+                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle"></li>
+                </ul>
+              </a>
               <p class="lead rezultatJedan">3</p>
               </div>
               <div class="col-md-4 prikazVrijeme">
@@ -47,6 +56,16 @@ session_start();
               <p class="text-right lead rezultatDva">4</p>
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
+              <a href="#team" class="dropdownTeamList">
+                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
+                <ul class="listTeamDva">
+                  <li>
+                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage">
+                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge">
+                  </li>
+                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle"></li>
+                </ul>
+              </a>
           </div>
           </header>
         </div>
