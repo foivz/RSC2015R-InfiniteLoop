@@ -232,15 +232,13 @@ function interval (map, markeri) {
 
 $scope.lijevo = function () {
   $scope.poruka = {
-    poruka: "I'm in danger!",
-    sifra: $rootScope.userData = data
+    poruka: "You are in danger!"
   };
   $scope.push();
 }
 $scope.right = function () {
   $scope.poruka = {
-    poruka: "You are in danger!",
-    sifra: $rootScope.userData = data
+    poruka: "I'm in danger!"
   };
   $scope.push();
 }
@@ -270,7 +268,9 @@ $scope.push = function () {
 }
 })
 
-.controller('StatistikaCtrl', function($scope) {})
+.controller('StatistikaCtrl', function($scope) {
+ 
+})
 
 .controller('PorukeCtrl', function($scope) {})
 

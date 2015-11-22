@@ -1,18 +1,6 @@
 <?php
-include_once '../konfiguracija.php';
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-$postdata = file_get_contents("php://input");
-    $request = json_decode($postdata);
-    @$poruka = $request->poruka;
-$izraz=$veza->prepare("select device from korisnik where status=2");
-$izraz->execute();
-$devices=$izraz->fetchALL(PDO::FETCH_OBJ);
-foreach ($devices as $device) {
-if ($device->device != null) {
-$uredaj = $device->device;
-$device_token= $uredaj;
-$poruka = $poruka;
+$device_token="APA91bHr8dX1RWuAAR2RtkCqW2NPVYWIeW0oN8lpQvEMwH09N0yNOSZFklv-RQkjvQJ1fPx4stsTDWsDBb_PzUpyYdsp9zhoGB5U7LpTNK7Lq2NLjyuof12Q8tZhq0LJaO15yw2DbW5m";
+$poruka = "poruka";
 $url = 'http://push.ionic.io/api/v1/push';
 $data = array(
                   'tokens' => array($device_token), 
@@ -32,5 +20,3 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 ));
 $result = curl_exec($ch);
 curl_close($ch);
-}
-}
