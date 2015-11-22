@@ -39,7 +39,7 @@ session_start();
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
                   <?php   
-          $izraz=$veza->prepare("select a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=1");
+          $izraz=$veza->prepare("select a.sifra, a.avatar, c.mrtav from korisnik a inner join timKorisnik b on b.korisnik=a.sifra inner join gameTimKorisnik c on c.timKorisnik=b.sifra where b.tim=1");
           $izraz->execute();
           $korisnik=$izraz->fetchALL(PDO::FETCH_OBJ);
           foreach ($korisnik as $k) {
@@ -50,7 +50,7 @@ session_start();
                   </li>
           <?php } else { ?>
 
-                  <li><img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
+                  <li><img src="<?php echo $k->avatar; ?>" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal" id="<?php echo $k->sifra; ?>"></li>
                 <?php } } ?>
                 </ul>
               </a>
@@ -119,6 +119,19 @@ session_start();
     })
     $("#triggerToggle").click(function () {
       $("#bodoviTim1").css("margin-top", "-230px").toggle();
+    })
+    $(".img-circle").click(function () {
+      var sifra = $(this).attr("id");
+      $.ajax({
+        type: "POST",
+        url: "dohvatiKorisnika.php",
+        data: "sifra=" + sifra,
+        success: function(msg){
+          podatak=$.parseJSON(msg);
+          $(".imePrezime").html(podatak.ime + " " + podatak.prezime);
+          $(".modalAvatar").attr("src", podatak.avatar);
+        }
+      });
     })
     </script>
     <script>
