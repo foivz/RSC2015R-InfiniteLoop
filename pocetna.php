@@ -10,7 +10,7 @@ session_start();
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="Infinite Loop">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="slike/favicon.ico">
 
     <title><?php echo $title; ?></title>
 
@@ -96,7 +96,7 @@ session_start();
         </div>
       </div>
     </div>
-    </div> 
+     
     <?php include 'modal.php'; ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -177,7 +177,7 @@ session_start();
         url: "runda.php",
         success: function(runda){
           podatci=$.parseJSON(runda);
-          $("#runda").html("Runda " + podatci.broj);
+          $("#runda").html("Round " + podatci.broj);
           $("#vrijeme").html(podatci.kraj);
           rundaInterval();
         }

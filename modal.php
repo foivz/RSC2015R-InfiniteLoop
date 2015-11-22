@@ -18,6 +18,7 @@
               <p class="nazivStatistike">Lost</p>
               <p class="modalStatistika">4</p>
             </div>
+            <img src="slike/share.png" class="pull-right">
           </div>
         </div>
       </div>
