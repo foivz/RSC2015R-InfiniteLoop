@@ -36,14 +36,14 @@ session_start();
             <div class="col-md-4 prikazTim">
               <img src="slike/group-users.png" alt="Icon">
               <p class="timJedan">Team 1</p>
-              <a href="#team" onclick="toggle_visibility('listTeam');">
+              <a href="#team">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
-                <ul class="listTeam" id="listTeam">
+                <ul class="listTeam">
                   <li>
-                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage">
-                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge">
+                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
+                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
                   </li>
-                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle"></li>
+                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
                 </ul>
               </a>
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
@@ -56,14 +56,14 @@ session_start();
               <p class="text-right lead rezultatDva" id="bodoviTim2"></p>
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
-              <a href="#team" class="dropdownTeamList" onclick="toggle_visibility('listTeam');">
+              <a href="#team" class="dropdownTeamList">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
-                <ul class="listTeamDva" id="listTeam">
+                <ul class="listTeamDva">
                   <li>
-                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage">
-                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge">
+                    <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
+                    <img src="slike/paint82.png" alt="K.O." class="deathSmudge" data-toggle="modal" data-target="#mojPrviModal">
                   </li>
-                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle"></li>
+                  <li><img src="http://placehold.it/40x40" alt="Avatar" class="img-circle" data-toggle="modal" data-target="#mojPrviModal"></li>
                 </ul>
               </a>
           </div>
@@ -77,19 +77,17 @@ session_start();
       </div>
     </div>
     </div> 
+    <?php include 'modal.php'; ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script type="text/javascript">
+      <script>
+    $('#mojPrviModal').modal('hide');
 
-    function toggle_visibility(listTeam) {
-       var e = document.getElementById('listTeam');
-       if(e.style.display == 'block')
-          e.style.display = 'none';
-       else
-          e.style.display = 'block';
-    }
-
+    $('#autorizacijaModal').click(function () {
+        $('#amojPrviModal').modal('show');
+    });
     </script>
     <script>
      $(document).ready(function() {
