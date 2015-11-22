@@ -36,8 +36,8 @@ session_start();
             <div class="col-md-4 col-sm-4 col-xs-4 prikazTim">
               <img src="slike/group-users.png" alt="Icon">
               <p class="timJedan">Team 1</p>
-              <a href="#team" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
+              <a href="#team">
+                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
                   <li>
                     <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
@@ -57,7 +57,7 @@ session_start();
               <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
               <p class="text-right timDva">Team 2</p>
               <a href="#team" class="dropdownTeamList">
-                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam">
+                <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggleDva">
                 <ul class="listTeamDva" id="listTeamDva">
                   <li>
                     <img src="http://placehold.it/40x40" alt="Avatar" class="img-circle listImage" data-toggle="modal" data-target="#mojPrviModal">
@@ -88,6 +88,19 @@ session_start();
     $('#autorizacijaModal').click(function () {
         $('#amojPrviModal').modal('show');
     });
+    </script>
+    <script type="text/javascript">
+    $('#listTeam').css('visibility', 'hidden');
+
+    $('#triggerToggle').click(function() {
+      $('#listTeam').css('visibility', 'visible').toggle();
+    })
+
+    $('#listTeamDva').css('visibility', 'hidden');
+
+    $('#triggerToggleDva').click(function() {
+      $('#listTeamDva').css('visibility', 'visible').toggle();
+    })
     </script>
     <script>
      $(document).ready(function() {
