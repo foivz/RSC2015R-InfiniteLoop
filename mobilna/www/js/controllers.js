@@ -75,7 +75,6 @@ function kreirajMapu() {
     };
 
     var map = new google.maps.Map(document.getElementById("mapa"), myOptions);
-   	$http.get('http://pilot.webege.com/izlistavanjeKategorija.php', { cache: true });
     
 }
 
