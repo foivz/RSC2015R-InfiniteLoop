@@ -32,9 +32,12 @@ session_start();
       <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12 rezultatiHeader">
           <header class="prikazRezultata">
-            <div class="col-md-4 col-sm-4 col-xs-4 prikazTim">
-              <img src="slike/group-users.png" alt="Icon">
-              <p class="timJedan">Team 1</p>
+            <div class="col-md-3 col-sm-3 col-xs-3 prikazTim">
+              <span>
+                <img src="slike/group-users.png" alt="Icon">
+                <p class="timJedan">Team 1</p>
+              </span>
+              <p>
               <a href="#team">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
@@ -54,16 +57,24 @@ session_start();
                 <?php } } ?>
                 </ul>
               </a>
+            </p>
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
               <p class="lead rezultatJedan" id="bodoviTim1"></p>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-4 prikazVrijeme">
               <p class="text-center" id="runda"></p>
               <p class="text-center vrijeme" id="vrijeme"></p>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-4 prikazTim">
+            <div class="col-md-1 col-sm-1 col-xs-1">
               <p class="text-right lead rezultatDva" id="bodoviTim2"></p>
-              <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
-              <p class="text-right timDva">Team 2</p>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3 text-right prikazTim">
+              <span>
+                <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
+                <p class="text-right timDva">Team 2</p>
+              </span>
+              <p>
               <a href="#team" class="dropdownTeamList">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggleDva">
                 <ul class="listTeamDva" id="listTeamDva">
@@ -83,6 +94,7 @@ session_start();
                 <?php endforeach; ?>
                 </ul>
               </a>
+            </p>
             </div>
           </header>
         </div>
@@ -117,9 +129,7 @@ session_start();
     $('#triggerToggleDva').click(function() {
       $('#listTeamDva').css('visibility', 'visible').toggle();
     })
-    $("#triggerToggle").click(function () {
-      $("#bodoviTim1").css("margin-top", "-230px").toggle();
-    })
+   
     $(".img-circle").click(function () {
       var sifra = $(this).attr("id");
       $.ajax({
