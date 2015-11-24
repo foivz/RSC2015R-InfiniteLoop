@@ -33,11 +33,11 @@ session_start();
         <div class="col-md-12 col-sm-12 col-xs-12 rezultatiHeader">
           <header class="prikazRezultata">
             <div class="col-md-3 col-sm-3 col-xs-3 prikazTim">
-              <span>
-                <img src="slike/group-users.png" alt="Icon">
+              <span class="responsiveTeam">
+                <img src="slike/group-users.png" alt="Icon" class="responsiveIcon">
                 <p class="timJedan">Team 1</p>
               </span>
-              <p>
+              <p class="dropdown">
               <a href="#team">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggle">
                 <ul class="listTeam" id="listTeam">
@@ -74,7 +74,7 @@ session_start();
                 <img src="slike/group-users.png" alt="Icon" class="ikonaTima">
                 <p class="text-right timDva">Team 2</p>
               </span>
-              <p>
+              <p class="dropdown">
               <a href="#team" class="dropdownTeamList">
                 <img src="slike/arrow.png" alt="Icon" class="dropdownTeam" id="triggerToggleDva">
                 <ul class="listTeamDva" id="listTeamDva">

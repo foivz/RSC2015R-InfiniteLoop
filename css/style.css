@@ -35,6 +35,11 @@ body {
 
 .prikazTim {
 	height: 98px;
+	padding-top: 35px;
+}
+
+.dropdown {
+	padding-top: 10px;
 }
 
 .rezultatJedan {
@@ -89,6 +94,8 @@ body {
 	width: 200px;
 	background-color: rgba(33,33,33,.8); 
 	margin: 0;
+	margin-left: -30px;
+    margin-top: -32px;
 }
 
 .listTeam li {
@@ -126,6 +133,8 @@ body {
 	padding-top: 20px;
 	margin: 0;
 	float: right;
+	margin-right: -30px;
+    margin-top: -32px;
 }
 
 .listTeamDva li {
@@ -211,10 +220,218 @@ body {
 		margin: 0;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
 	}
 
 	.logoPocetna {
 		width: 100%;
 		margin: 0;
 	}
+}
+
+@media (max-width: 533px) {
+	.prikazTim {
+		padding-top: 10px;
+	}
+
+	.listTeam {
+		margin-top: -31px;
+		width: 120px;
+	}
+
+	.listTeamDva {
+		margin-top: -31px;
+		width: 120px;
+	}
+}
+
+@media (max-width: 421px) {
+	.timJedan {
+		font-size: 19px;
+	} 
+
+	.timDva {
+		font-size: 19px;
+	} 
+
+	.rezultatDva {
+		margin-left: -30px;
+	}
+}
+
+@media (max-width: 407px) {
+	.prikazTim {
+		padding-top: 13px;
+	}
+
+	.timJedan {
+		font-size: 18px;
+	} 
+
+	.timDva {
+		font-size: 18px;
+	} 
+
+	.rezultatDva {
+		margin-left: -30px;
+	}
+}
+
+@media (max-width: 394px) {
+	.prikazTim {
+		padding-top: 14px;
+	}
+
+	.timJedan {
+		font-size: 17px;
+	} 
+
+	.timDva {
+		font-size: 17px;
+	} 
+
+	.rezultatJedan {
+		font-size: 58px;
+	}
+
+	.rezultatDva {
+		margin-left: -30px;
+		font-size: 58px;
+	}
+}
+
+@media (max-width: 389px) {
+	.prikazTim {
+		padding-top: 16px;
+	}
+
+	.timJedan {
+		font-size: 16px;
+	} 
+
+	.timDva {
+		font-size: 16px;
+	} 
+
+	.listTeamDva {
+		margin-right: -37px;
+	}
+
+	.rezultatJedan {
+		font-size: 50px;
+		padding-top: 15px;
+	}
+
+	.rezultatDva {
+		margin-left: -30px;
+		font-size: 50px;
+		padding-top: 15px;
+	}
+
+	.prikazVrijeme > p {
+		font-size: 10px;
+	}
+
+	.col-xs-3 {
+		width: 24%;
+	}
+}
+
+@media (max-width: 389px) {
+	.prikazTim {
+		padding-top: 17px;
+	}
+
+	.timJedan {
+		font-size: 15px;
+	}
+
+	.timDva {
+		font-size: 15px;
+	} 
+}
+
+@media (max-width: 359px) {
+	.prikazTim {
+		padding-top: 18px;
+	}
+
+	.timJedan {
+		font-size: 13px;
+	}
+
+	.timDva {
+		font-size: 13px;
+	} 
+}
+
+@media (max-width: 351px) {
+	.col-xs-3 {
+		width: 23%;
+	}
+
+	.timJedan {
+		font-size: 12px;
+	}
+
+	.timDva {
+		font-size: 12px;
+	} 
+
+	.listTeam {
+		width: 100px;
+	}
+
+	.listTeamDva {
+		width: 100px;
+	}
+}
+
+@media (max-width: 338px) {
+	.timJedan {
+		font-size: 11px;
+	}
+
+	.timDva {
+		font-size: 11px;
+	} 
+
+	.prikazTim {
+    	padding-top: 19px;
+	}
+}
+
+@media (max-width: 321px) {
+	.col-xs-3 {
+		width: 22%;
+	}
+
+	.timJedan {
+		font-size: 10px;
+	}
+
+	.timDva {
+		font-size: 10px;
+	} 
+}
+
+@media (max-width: 320px) {
+	.col-xs-3 {
+		width: 22%;
+	}
+
+	.prikazTim {
+    	padding-top: 20px;
+	}
+
+	.timJedan {
+		font-size: 9px;
+	}
+
+	.timDva {
+		font-size: 9px;
+	} 
+}
+
+@media (max-width: 302px) {
 }
